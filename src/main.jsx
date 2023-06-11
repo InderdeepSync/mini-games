@@ -20,10 +20,10 @@ const router = createBrowserRouter([
         path: "/color-matching",
         element:<ColorGame/>
     },
-    // {
-    //     path: "/memory-challenge",
-    //     element: <GameGenerator/>
-    // },
+    {
+        path: "/memory-challenge",
+        element: <GameGenerator/>
+    },
     // {
     //     path: "/target-sum",
     //     element: <TargetSum/>
