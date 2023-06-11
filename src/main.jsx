@@ -1,4 +1,3 @@
-import * as React from "react";
 import {createRoot} from "react-dom/client";
 import StarGame from "./star-matching/index.jsx";
 import ColorGame from "./color-match/index.jsx";
@@ -24,14 +23,12 @@ const router = createBrowserRouter([
         path: "/memory-challenge",
         element: <GameGenerator/>
     },
-    // {
-    //     path: "/target-sum",
-    //     element: <TargetSum/>
-    // }
+    {
+        path: "/target-sum",
+        element: <TargetSum/>
+    }
 ]);
 
 createRoot(document.getElementById("root")).render(
-    <React.StrictMode>
         <RouterProvider router={router} />
-    </React.StrictMode>
 );
