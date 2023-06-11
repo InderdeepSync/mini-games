@@ -12,10 +12,10 @@ import GameGenerator from "./memory-challenge/index.jsx";
 import TargetSum from "./target-sum/index.jsx";
 
 const router = createBrowserRouter([
-    // {
-    //     path: "/star-matching",
-    //     element: <StarGame/>,
-    // },
+    {
+        path: "/star-matching",
+        element: <StarGame/>,
+    },
     {
         path: "/color-matching",
         element:<ColorGame/>
