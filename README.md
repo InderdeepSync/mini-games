@@ -1,6 +1,7 @@
 # Awesome React Mini Games
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c28c8c31-67c1-4f56-88d3-6eb241294839/deploy-status)](https://app.netlify.com/sites/mini-games-sync/deploys)
 
 A collection of fun mini-games built with React, CSS Modules, React Router and Vite.
 
