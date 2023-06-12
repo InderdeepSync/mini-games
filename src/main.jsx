@@ -9,14 +9,15 @@ import {
 import "./index.css";
 import GameGenerator from "./memory-challenge/index.jsx";
 import TargetSum from "./target-sum/index.jsx";
+import HomePage from "./Home.jsx";
 
 const router = createBrowserRouter([
     {
-        path: "/star-matching",
+        path: "/star-match",
         element: <StarGame/>,
     },
     {
-        path: "/color-matching",
+        path: "/color-match",
         element:<ColorGame/>
     },
     {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
     {
         path: "/target-sum",
         element: <TargetSum/>
+    },
+    {
+        path: "/",
+        element: <HomePage/>
     }
 ]);
 

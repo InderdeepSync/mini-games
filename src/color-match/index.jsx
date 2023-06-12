@@ -3,6 +3,7 @@ import React from 'react'
 import _ from 'lodash'
 
 import styles from './styles.module.css'
+import {Link} from "react-router-dom";
 const colors = ['black', 'blue', 'red', 'green', 'yellow'];
 
 const randomColors = () => {
@@ -52,6 +53,11 @@ export default class ColorGame extends React.Component {
         } = this.colorValues;
         const { gameStatus } = this.state;
         return (
+            <>
+            <div className="go-back">
+                <Link to="/">Go Back</Link>
+            </div>
+            <h1>Color Match</h1>
             <div className={styles.game}>
                 <div className={styles.help}>
                     Does the meaning of the top word match the ink
@@ -77,6 +83,7 @@ export default class ColorGame extends React.Component {
                     </div>
                 </div>
             </div>
+            </>
         );
     }
 }

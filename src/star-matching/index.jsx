@@ -3,7 +3,8 @@
 import styles from "./styles.module.css"
 
 import _ from "lodash"
-import {Component, PureComponent} from "react"
+import React, {Component, PureComponent} from "react"
+import {Link} from "react-router-dom";
 // STAR MATCH - Final Code
 
 function randomSum(arr, maxSum) {
@@ -122,6 +123,11 @@ export default class StarGame extends Component {
 
     render() {
         return (
+            <>
+            <div className="go-back">
+                <Link to="/">Go Back</Link>
+            </div>
+            <h1>Star Match</h1>
             <div className={styles.game}>
                 <div className={styles.help}>Pick 1 or more numbers that sum to the number of stars</div>
                 <div className={styles.body}>
@@ -146,6 +152,7 @@ export default class StarGame extends Component {
                     </div>
                 </div>
             </div>
+            </>
         );
     }
 }

@@ -1,7 +1,7 @@
-
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 
 import styles from "./styles.module.css"
+import {Link} from "react-router-dom";
 
 const GameStatus = {
     NEW: 'NEW',
@@ -26,7 +26,7 @@ const Messages = {
     LOST: 'Game Over',
 };
 
-const Cell = ({ width, gameStatus, isChallenge, isPicked, onClick }) => {
+const Cell = ({width, gameStatus, isChallenge, isPicked, onClick}) => {
     let cellStatus = CellStatus.NORMAL;
     if (gameStatus !== GameStatus.NEW) {
         if (isPicked) {
@@ -41,15 +41,15 @@ const Cell = ({ width, gameStatus, isChallenge, isPicked, onClick }) => {
     return (
         <div
             className={styles.cell}
-            style={{ width: `${width}%`, backgroundColor: cellStatus }}
+            style={{width: `${width}%`, backgroundColor: cellStatus}}
             onClick={onClick}
         />
     );
 };
 
-const Footer = ({ gameStatus, countdown, startGame, resetGame }) => {
+const Footer = ({gameStatus, countdown, startGame, resetGame}) => {
     const buttonAreaContent = () => {
-        switch(gameStatus) {
+        switch (gameStatus) {
             case GameStatus.NEW:
                 return <button onClick={startGame}>Start Game</button>;
             case GameStatus.CHALLENGE:
@@ -134,26 +134,32 @@ const GameSession = ({
     };
 
     return (
-        <div className={styles.game}>
-            <div className={styles.grid}>
-                {cellIds.map(cellId => (
-                    <Cell
-                        key={cellId}
-                        width={cellWidth}
-                        gameStatus={gameStatus}
-                        isChallenge={challengeCellIds.includes(cellId)}
-                        isPicked={pickedCellIds.includes(cellId)}
-                        onClick={() => pickCell(cellId)}
-                    />
-                ))}
+        <>
+            <div className="go-back">
+                <Link to="/">Go Back</Link>
             </div>
-            <Footer
-                gameStatus={gameStatus}
-                countdown={countdown}
-                startGame={() => setGameStatus(GameStatus.CHALLENGE)}
-                resetGame={resetGame}
-            />
-        </div>
+            <h1>Memory Challenge</h1>
+            <div className={styles.game}>
+                <div className={styles.grid}>
+                    {cellIds.map(cellId => (
+                        <Cell
+                            key={cellId}
+                            width={cellWidth}
+                            gameStatus={gameStatus}
+                            isChallenge={challengeCellIds.includes(cellId)}
+                            isPicked={pickedCellIds.includes(cellId)}
+                            onClick={() => pickCell(cellId)}
+                        />
+                    ))}
+                </div>
+                <Footer
+                    gameStatus={gameStatus}
+                    countdown={countdown}
+                    startGame={() => setGameStatus(GameStatus.CHALLENGE)}
+                    resetGame={resetGame}
+                />
+            </div>
+        </>
     );
 };
 
@@ -168,7 +174,7 @@ const useGameId = () => {
 };
 
 const GameGenerator = () => {
-    const { gameId, isNewGame, renewGame } = useGameId();
+    const {gameId, isNewGame, renewGame} = useGameId();
 
     const gridSize = 5;
     const challengeSize = 6;
@@ -196,7 +202,7 @@ const GameGenerator = () => {
 const utils = {
     /* Create an array based on a numeric size property.
        Example: createArray(5) => [0, 1, 2, 3, 4] */
-    createArray: size => Array.from({ length: size }, (_, i) => i),
+    createArray: size => Array.from({length: size}, (_, i) => i),
 
     /* Pick random elements from origArray up to sampleSize
        And use them to form a new array.

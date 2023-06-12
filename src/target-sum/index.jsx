@@ -3,6 +3,7 @@ import _ from "lodash"
 import React from "react";
 
 import styles from "./styles.module.css"
+import {Link} from "react-router-dom";
 
 const colors = {
     new: 'lightblue',
@@ -25,7 +26,7 @@ class Number extends React.PureComponent {
         return (
             <div
                 className={styles.number}
-                style={{ opacity: this.props.clickable ? 1 : 0.3 }}
+                style={{opacity: this.props.clickable ? 1 : 0.3}}
                 onClick={this.handleClick}
             >
                 {this.props.value}
@@ -48,11 +49,13 @@ class Game extends React.Component {
     target = _.sum(
         _.sampleSize(this.challengeNumbers, this.props.answerSize)
     );
+
     componentDidMount() {
         if (this.props.autoPlay) {
             this.startGame();
         }
     }
+
     componentWillUnmount() {
         console.log("About to unmount Game: ", this.intervalId)
         clearInterval(this.intervalId);
@@ -62,16 +65,16 @@ class Game extends React.Component {
         this.state.selectedIds.indexOf(numberIndex) === -1;
 
     startGame = () => {
-        this.setState({ gameStatus: 'playing' }, () => {
+        this.setState({gameStatus: 'playing'}, () => {
             this.intervalId = setInterval(() => {
                 this.setState(prevState => {
                     const newRemainingSeconds =
                         prevState.remainingSeconds - 1;
                     if (newRemainingSeconds === 0) {
                         clearInterval(this.intervalId);
-                        return { gameStatus: 'lost', remainingSeconds: 0 };
+                        return {gameStatus: 'lost', remainingSeconds: 0};
                     }
-                    return { remainingSeconds: newRemainingSeconds };
+                    return {remainingSeconds: newRemainingSeconds};
                 });
             }, 1000);
             console.log("IntervalId: ", this.intervalId);
@@ -85,7 +88,7 @@ class Game extends React.Component {
                     return null;
                 }
                 const newSelectedIds =
-                    [ ...prevState.selectedIds, numberIndex ];
+                    [...prevState.selectedIds, numberIndex];
                 return {
                     selectedIds: newSelectedIds,
                     gameStatus: this.calcGameStatus(newSelectedIds),
@@ -110,7 +113,7 @@ class Game extends React.Component {
     };
 
     render() {
-        const { gameStatus, remainingSeconds } = this.state;
+        const {gameStatus, remainingSeconds} = this.state;
         return (
             <div className={styles.game}>
                 <div className={styles.help}>
@@ -119,7 +122,7 @@ class Game extends React.Component {
                 </div>
                 <div
                     className={styles.target}
-                    style={{ backgroundColor: colors[gameStatus] }}
+                    style={{backgroundColor: colors[gameStatus]}}
                 >
                     {gameStatus === 'new' ? 'TARGET' : this.target}
                 </div>
@@ -162,17 +165,24 @@ class GameContainer extends React.Component {
         this.setState(prevState => ({
             gameId: prevState.gameId + 1,
         }));
+
     render() {
         return (
-            <Game
-                key={this.state.gameId}
-                autoPlay={this.state.gameId > 1}
-                challengeRange={[2, 9]}
-                challengeSize={6}
-                answerSize={4}
-                initialSeconds={15}
-                onPlayAgain={this.resetGame}
-            />
+            <>
+                <div className="go-back">
+                    <Link to="/">Go Back</Link>
+                </div>
+                <h1>Target Sum</h1>
+                <Game
+                    key={this.state.gameId}
+                    autoPlay={this.state.gameId > 1}
+                    challengeRange={[2, 9]}
+                    challengeSize={6}
+                    answerSize={4}
+                    initialSeconds={15}
+                    onPlayAgain={this.resetGame}
+                />
+            </>
         );
     }
 }
