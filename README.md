@@ -12,7 +12,7 @@ A collection of fun mini-games built with React, CSS Modules, React Router and V
 ink while the second color is rendered with a third random color value. The challenge is for the player to determine if the meaning of the first color word 
 matches the ink color of the second word. This is not as easy as it sounds.
 3. **Target Sum**: The user has to pick a combination of numbers that sum up to the Target sum.
-4. **Memory Challenge**: A grid-based memory challenge game where the player is challenged to recall the locations of cells on a grid
+4. **Memory Challenge**: A grid-based memory challenge game where the player is challenged to recall the locations of cells on a grid.
 
 ## Features
 
