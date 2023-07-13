@@ -58,7 +58,7 @@ export default class ColorGame extends React.Component {
                 <Link to="/">Go Back</Link>
             </div>
             <h1>Color Match</h1>
-            <div className={styles.game}>
+            <div>
                 <div className={styles.help}>
                     Does the meaning of the top word match the ink
                     color of the bottom word?

@@ -1,10 +1,7 @@
 *, *:before, *:after {
     box-sizing: border-box;
 }
-.game {
-    max-width: 600px;
-    margin: 5% auto;
-}
+
 .grid {
     border: thin solid gray; line-height: 0;
 }

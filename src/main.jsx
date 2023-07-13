@@ -1,15 +1,18 @@
 import {createRoot} from "react-dom/client";
-import StarGame from "./star-matching/index.jsx";
-import ColorGame from "./color-match/index.jsx";
-
 import {
     createBrowserRouter,
     RouterProvider,
 } from "react-router-dom";
+
 import "./index.css";
-import GameGenerator from "./memory-challenge/index.jsx";
-import TargetSum from "./target-sum/index.jsx";
 import HomePage from "./Home.jsx";
+
+import GameGenerator from "./memory-challenge";
+import TargetSum from "./target-sum";
+import StarGame from "./star-matching";
+import ColorGame from "./color-match";
+import Kanban from "./kanban/"
+import React from "react";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +30,10 @@ const router = createBrowserRouter([
     {
         path: "/target-sum",
         element: <TargetSum/>
+    },
+    {
+        path: "/kanban",
+        element: <Kanban/>
     },
     {
         path: "/",

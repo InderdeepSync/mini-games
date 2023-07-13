@@ -139,7 +139,7 @@ const GameSession = ({
                 <Link to="/">Go Back</Link>
             </div>
             <h1>Memory Challenge</h1>
-            <div className={styles.game}>
+            <div>
                 <div className={styles.grid}>
                     {cellIds.map(cellId => (
                         <Cell

@@ -1,6 +1,5 @@
 .game {
     max-width: 400px;
-    margin: 0 auto;
     text-align: center;
 }
 .help {
@@ -15,10 +14,6 @@
     text-align: center;
     display: inline-block;
     background-color: lightblue;
-}
-.challenge-numbers {
-    width: 100%;
-    margin: 10px auto;
 }
 .number {
     border: thin solid lightgray;
@@ -35,10 +30,7 @@
     width: 100%;
     justify-content: space-between;
 }
-.timer-value {
-    color: darkgreen;
-    font-size: 150%;
-}
+
 button:focus {
     outline: none;
 }
