@@ -19,6 +19,9 @@ function HomePage() {
                     <Link to="/memory-challenge">Memory Challenge</Link>
                 </li>
                 <li>
+                    <Link to="/tic-tac-toe">Tic Tac Toe</Link>
+                </li>
+                <li>
                     <Link to="/kanban">Kanban Board</Link>
                 </li>
             </ul>

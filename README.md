@@ -28,7 +28,7 @@ matches the ink color of the second word. This is not as easy as it sounds.
    ```bash
    npm install
    
-3. Run the developmment server:
+3. Run the development server:
 
     ```bash
     npm run dev  

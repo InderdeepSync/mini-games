@@ -1,3 +1,4 @@
+import React from "react";
 import {createRoot} from "react-dom/client";
 import {
     createBrowserRouter,
@@ -12,7 +13,7 @@ import TargetSum from "./target-sum";
 import StarGame from "./star-matching";
 import ColorGame from "./color-match";
 import Kanban from "./kanban/"
-import React from "react";
+import TicTacToeGame from "./tic-tac-toe";
 
 const router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
     {
         path: "/kanban",
         element: <Kanban/>
+    },
+    {
+        path: "/tic-tac-toe",
+        element: <TicTacToeGame/>
     },
     {
         path: "/",
