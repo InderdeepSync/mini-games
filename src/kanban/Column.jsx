@@ -16,7 +16,7 @@ const Title = styled.h3`
 `;
 const TaskList = styled.div`
     padding: 8px;
-    background-color: ${props => (props.isDraggingOver ? 'skyblue' : 'inherit')};
+    background-color: ${props => (props.$isDraggingOver ? 'skyblue' : 'inherit')};
     min-height:100px;
 `;
 
@@ -33,7 +33,7 @@ function Column(props) {
                             <TaskList
                                 ref={provided.innerRef}
                                 {...provided.droppableProps}
-                                isDraggingOver={snapshot.isDraggingOver}
+                                $isDraggingOver={snapshot.isDraggingOver}
                             >
                                 {props.tasks.map((task, index) => <Task key={task.id} task={task} index={index} />)}
                                 {provided.placeholder}

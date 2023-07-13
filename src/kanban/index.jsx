@@ -3,14 +3,12 @@ import styled from 'styled-components'
 import dataset from './dataset'
 import Column from './Column.jsx'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
+import {Link} from "react-router-dom";
+import {IoReturnUpBackOutline} from "react-icons/io5"
+import {Helmet} from "react-helmet";
 
 const Container = styled.div`
     display : flex;
-`
-
-const Wrapper = styled.div`
-  margin: auto;
-  width: fit-content;
 `
 
 const Kanban = () => {
@@ -89,21 +87,30 @@ const Kanban = () => {
     }
 
     return (
-        <DragDropContext onDragEnd={onDragEnd}>
-            <Droppable droppableId='all-columns' direction='horizontal' type='column'>
-                {(provided) => (
-                    <Container {...provided.droppableProps} ref={provided.innerRef}>
-                        {data.columnOrder.map((id, index) => {
-                            const column = data.columns[id]
-                            const tasks = column.taskIds.map(taskId => data.tasks[taskId])
+        <>
+            <Helmet>
+                <title>Kanban Board Demo</title>
+            </Helmet>
+            <div className="go-back">
+                <Link to="/"><IoReturnUpBackOutline/> Go Back</Link>
+            </div>
+            <DragDropContext onDragEnd={onDragEnd}>
+                <Droppable droppableId='all-columns' direction='horizontal' type='column'>
+                    {(provided) => (
+                        <Container {...provided.droppableProps} ref={provided.innerRef}>
+                            {data.columnOrder.map((id, index) => {
+                                const column = data.columns[id]
+                                const tasks = column.taskIds.map(taskId => data.tasks[taskId])
 
-                            return <Column key={column.id} column={column} tasks={tasks} index={index} />
-                        })}
-                        {provided.placeholder}
-                    </Container>
-                )}
-            </Droppable>
-        </DragDropContext>
+                                return <Column key={column.id} column={column} tasks={tasks} index={index} />
+                            })}
+                            {provided.placeholder}
+                        </Container>
+                    )}
+                </Droppable>
+            </DragDropContext>
+        </>
+
     )
 }
 

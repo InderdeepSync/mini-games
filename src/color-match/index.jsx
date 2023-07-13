@@ -4,6 +4,8 @@ import _ from 'lodash'
 
 import styles from './styles.module.css'
 import {Link} from "react-router-dom";
+import {IoReturnUpBackOutline} from "react-icons/io5";
+import {Helmet} from "react-helmet";
 const colors = ['black', 'blue', 'red', 'green', 'yellow'];
 
 const randomColors = () => {
@@ -54,8 +56,11 @@ export default class ColorGame extends React.Component {
         const { gameStatus } = this.state;
         return (
             <>
+                <Helmet>
+                    <title>Color Matching Game</title>
+                </Helmet>
             <div className="go-back">
-                <Link to="/">Go Back</Link>
+                <Link to="/"><IoReturnUpBackOutline/> Go Back</Link>
             </div>
             <h1>Color Match</h1>
             <div>

@@ -5,6 +5,8 @@ import styles from "./styles.module.css"
 import _ from "lodash"
 import React, {Component, PureComponent} from "react"
 import {Link} from "react-router-dom";
+import {IoReturnUpBackOutline} from "react-icons/io5";
+import {Helmet} from "react-helmet";
 // STAR MATCH - Final Code
 
 function randomSum(arr, maxSum) {
@@ -124,8 +126,11 @@ export default class StarGame extends Component {
     render() {
         return (
             <>
+                <Helmet>
+                    <title>Star Matching Game</title>
+                </Helmet>
             <div className="go-back">
-                <Link to="/">Go Back</Link>
+                <Link to="/"><IoReturnUpBackOutline/> Go Back</Link>
             </div>
             <h1>Star Match</h1>
             <div className={styles.game}>

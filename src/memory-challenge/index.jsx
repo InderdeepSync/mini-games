@@ -2,6 +2,8 @@ import React, {useEffect, useState} from "react";
 
 import styles from "./styles.module.css"
 import {Link} from "react-router-dom";
+import {IoReturnUpBackOutline} from "react-icons/io5";
+import {Helmet} from "react-helmet";
 
 const GameStatus = {
     NEW: 'NEW',
@@ -135,8 +137,11 @@ const GameSession = ({
 
     return (
         <>
+            <Helmet>
+                <title>Memory Challenge</title>
+            </Helmet>
             <div className="go-back">
-                <Link to="/">Go Back</Link>
+                <Link to="/"><IoReturnUpBackOutline/> Go Back</Link>
             </div>
             <h1>Memory Challenge</h1>
             <div>

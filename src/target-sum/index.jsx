@@ -4,6 +4,8 @@ import React from "react";
 
 import styles from "./styles.module.css"
 import {Link} from "react-router-dom";
+import {IoReturnUpBackOutline} from "react-icons/io5";
+import {Helmet} from "react-helmet";
 
 const colors = {
     new: 'lightblue',
@@ -169,8 +171,11 @@ class GameContainer extends React.Component {
     render() {
         return (
             <>
+                <Helmet>
+                    <title>Target Sum Game</title>
+                </Helmet>
                 <div className="go-back">
-                    <Link to="/">Go Back</Link>
+                    <Link to="/"><IoReturnUpBackOutline/> Go Back</Link>
                 </div>
                 <h1>Target Sum</h1>
                 <Game
