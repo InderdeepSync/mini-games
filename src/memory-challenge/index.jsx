@@ -21,7 +21,7 @@ const CellStatus = {
 };
 
 const Messages = {
-    NEW: 'You will have a few seconds to memorize the blue random cells',
+    NEW: 'You will have a few seconds to memorize the blue random cells.',
     CHALLENGE: 'Remember these blue cells now',
     PLAYING: 'Which cells were blue?',
     WON: 'Victory!',
@@ -144,7 +144,7 @@ const GameSession = ({
                 <Link to="/"><IoReturnUpBackOutline/> Go Back</Link>
             </div>
             <h1>Memory Challenge</h1>
-            <div>
+            <div className={styles.game}>
                 <div className={styles.grid}>
                     {cellIds.map(cellId => (
                         <Cell
