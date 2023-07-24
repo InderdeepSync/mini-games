@@ -27,7 +27,7 @@ function HomePage() {
                         <Link to="/tic-tac-toe">Tic Tac Toe</Link>
                     </li>
                     <li>
-                        <Link to="/kanban">Kanban Board</Link>
+                        <Link to="/kanban">Kanban Board (Desktop only)</Link>
                     </li>
                     <li>
                         <Link to="/todos">Todos</Link>
