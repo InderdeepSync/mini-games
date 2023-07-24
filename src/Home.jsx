@@ -29,6 +29,9 @@ function HomePage() {
                     <li>
                         <Link to="/kanban">Kanban Board</Link>
                     </li>
+                    <li>
+                        <Link to="/todos">Todos</Link>
+                    </li>
                 </ul>
             </div>
         </>

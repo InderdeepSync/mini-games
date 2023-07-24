@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c28c8c31-67c1-4f56-88d3-6eb241294839/deploy-status)](https://app.netlify.com/sites/mini-games-sync/deploys)
 
-A collection of fun mini-games built with React, CSS Modules, React Router and Vite.
+A collection of 7 fun browser games and demos built with React, CSS Modules, React Router and Vite.
 
 ## 🎮 Mini Games
 
@@ -13,6 +13,9 @@ ink while the second color is rendered with a third random color value. The chal
 matches the ink color of the second word. This is not as easy as it sounds.
 3. **Target Sum**: The user has to pick a combination of numbers that sum up to the Target sum.
 4. **Memory Challenge**: A grid-based memory challenge game where the player is challenged to recall the locations of cells on a grid.
+5. **Tic Tac Toe**: An interactive 2-Player tic-tac-toe game with an additional ability to “go back in time” to the previous moves in the game.
+6. **Kanban Board**: A Simple Task Management Kanban Board app built using the incredibly extensible `react-beautiful-dnd` library by Atlassian.
+7. **Todos App**: A Classic Application to manage your daily workflow. Add/Delete todos seamlessly. Stores user data in localstorage for persistence.
 
 ## Features
 

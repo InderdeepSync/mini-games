@@ -14,6 +14,7 @@ import StarGame from "./star-matching";
 import ColorGame from "./color-match";
 import Kanban from "./kanban/"
 import TicTacToeGame from "./tic-tac-toe";
+import TodoList from "./todo";
 
 const router = createBrowserRouter([
     {
@@ -43,6 +44,14 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <HomePage/>
+    },
+    {
+        path: "/todos",
+        element: <TodoList/>
+    },
+    {
+        path: "*",
+        element: <h1>404 Not Found</h1>
     }
 ]);
 
